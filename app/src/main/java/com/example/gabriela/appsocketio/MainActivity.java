@@ -78,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
         mSocket.connect();
     }
 
+    @Override //testar esse trecho aqui é bem importante
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mSocket != null)
+            mSocket.disconnect();
+    }
+
 
 }
 
